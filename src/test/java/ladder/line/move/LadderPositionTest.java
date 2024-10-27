@@ -9,7 +9,7 @@ class LadderPositionTest {
 
     @DisplayName("현재 위치에서 오른쪽으로 이동하면 현재 위치가 1 증가한다.")
     @Test
-    void right() {
+    void left() {
         Point right = Point.first(true);
 
         LadderPosition ladderPosition = new LadderPosition(new Position(1), right);
@@ -19,7 +19,7 @@ class LadderPositionTest {
 
     @DisplayName("현재 위치에서 왼쪽으로 이동하면 현재 위치가 1 감소한다.")
     @Test
-    void left() {
+    void right() {
         Point left = Point.first(true).next(false);
 
         LadderPosition ladderPosition = new LadderPosition(new Position(1), left);

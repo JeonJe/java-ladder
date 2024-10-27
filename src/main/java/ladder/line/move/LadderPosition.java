@@ -6,8 +6,8 @@ public class LadderPosition {
     private final Position position;
     private final Point point;
 
-    public LadderPosition(int position, boolean left, boolean current) {
-        this(new Position(position), Point.first(left).next(current));
+    public LadderPosition(int position, Point point) {
+        this(new Position(position), point);
     }
 
     public LadderPosition(Position poisition, Point point) {
@@ -17,10 +17,10 @@ public class LadderPosition {
 
     public Position move() {
         if (point.move() == Direction.RIGHT) {
-            return position.left();
+            return position.right();
         }
         if (point.move() == Direction.LEFT) {
-            return position.right();
+            return position.left();
         }
         return position;
     }

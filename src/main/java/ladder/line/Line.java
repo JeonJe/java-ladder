@@ -16,11 +16,11 @@ public class Line {
 
         for (int i = 0; i < countOfPerson - 1; i++) {
             boolean currentLineConnection = !isPrevLineConnected && lineGenerateStrategy.generate();
-            ladderPositions.add(new LadderPosition(i, isPrevLineConnected, currentLineConnection));
+            ladderPositions.add(new LadderPosition(i, Point.first(isPrevLineConnected).next(currentLineConnection)));
             isPrevLineConnected = currentLineConnection;
         }
 
-        ladderPositions.add(new LadderPosition(new Position(countOfPerson - 1), Point.first(isPrevLineConnected).last()));
+        ladderPositions.add(new LadderPosition(countOfPerson - 1, Point.first(isPrevLineConnected).last()));
     }
 
     public Position move(int position) {

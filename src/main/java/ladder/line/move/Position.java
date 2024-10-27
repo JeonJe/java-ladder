@@ -14,11 +14,11 @@ public class Position {
         this.value = value;
     }
 
-    public Position right() {
+    public Position left() {
         return new Position(value - DISTANCE);
     }
 
-    public Position left() {
+    public Position right() {
         return new Position(value + DISTANCE);
     }
 
